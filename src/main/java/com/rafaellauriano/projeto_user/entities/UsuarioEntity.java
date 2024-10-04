@@ -2,6 +2,10 @@ package com.rafaellauriano.projeto_user.entities;
 
 import java.util.Objects;
 
+import org.springframework.beans.BeanUtils;
+
+import com.rafaellauriano.projeto_user.dto.UsuarioDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,6 +29,11 @@ public class UsuarioEntity {
 	private String senha;
 	@Column(nullable = false)
 	private String email;
+	
+	//construtor de conversão de entity para DTO
+	public UsuarioEntity(UsuarioDTO usuario) {
+		BeanUtils.copyProperties(usuario, this);
+	}
 	
 	public UsuarioEntity() {
 	}
