@@ -23,7 +23,8 @@ public class UsuarioEntity {
 	private String login;
 	@Column(nullable = false)
 	private String senha;
-	
+	@Column(nullable = false)
+	private String email;
 	
 	public UsuarioEntity() {
 	}
@@ -34,6 +35,7 @@ public class UsuarioEntity {
 		this.login = login;
 		this.senha = senha;
 		this.email = email;
+	
 	}
 
 	public Long getId() {
